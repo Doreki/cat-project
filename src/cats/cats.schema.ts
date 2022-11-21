@@ -1,16 +1,14 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { IsEmail, IsString, IsNotEmpty } from 'class-validator';
-import { HydratedDocument, SchemaOptions } from 'mongoose';
+import { Document, SchemaOptions } from 'mongoose';
 import { ApiProperty } from '@nestjs/swagger';
-
-export type CatDocument = HydratedDocument<Cat>;
 
 const options: SchemaOptions = {
   timestamps: true,
 };
 
 @Schema(options)
-export class Cat {
+export class Cat extends Document {
   @ApiProperty({
     example: 'asdf@naver,com',
     description: 'email',

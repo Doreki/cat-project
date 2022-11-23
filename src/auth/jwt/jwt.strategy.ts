@@ -9,13 +9,13 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(private readonly catsRepository: CatsRepository) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-      secretOrkey: 'secretKey',
+      secretOrKey: process.env.JWT_SECRET,
       ignoreExpiration: false,
     });
   }
 
   async validate(payload: Payload) {
-    const cat = await this.catsRepository.findCatByIdwithoutPassword(
+    const cat = await this.catsRepository.findCatByIdWithoutPassword(
       payload.sub,
     );
 

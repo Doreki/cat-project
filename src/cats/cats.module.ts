@@ -5,8 +5,8 @@ import { CatsController } from './cats.controller';
 import { CatsRepository } from './cats.repository';
 import { Cat, _CatSchema } from './cats.schema';
 import { CatsService } from './cats.service';
-import { MulterModule } from '@nestjs/platform-express/multer';
 import { CommentsSchema } from 'src/comments/comments.schema';
+import { MulterModule } from '@nestjs/platform-express/multer';
 
 @Module({
   imports: [

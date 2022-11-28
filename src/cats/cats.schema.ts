@@ -60,7 +60,6 @@ export class Cat extends Document {
   };
 
   readonly comments: Comment[];
-  }
 }
 
 export const _CatSchema = SchemaFactory.createForClass(Cat);
